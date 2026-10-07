@@ -8,7 +8,6 @@
 
 /* Begin PBXFileReference section */
 		000000000000000000000120 /* Gallery-Organiser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gallery-Organiser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		691A0A3B307699FD005D5879 /* Gallery-Organiser.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Gallery-Organiser.xcodeproj"; path = "Gallery-Organiser/Gallery-Organiser.xcodeproj"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -40,13 +39,6 @@
 			isa = PBXGroup;
 			children = (
 				000000000000000000000120 /* Gallery-Organiser.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		691A0A3C307699FD005D5879 /* Products */ = {
-			isa = PBXGroup;
-			children = (
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,12 +91,6 @@
 			preferredProjectObjectVersion = 90;
 			productRefGroup = 000000000000000000000020 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 691A0A3C307699FD005D5879 /* Products */;
-					ProjectRef = 691A0A3B307699FD005D5879 /* Gallery-Organiser.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				000000000000000100000000 /* Gallery-Organiser */,

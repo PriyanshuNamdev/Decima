@@ -63,7 +63,7 @@ struct ContentView: View {
                             .font(.system(size: 17, weight: .semibold))
                             .foregroundColor(.softWhite)
                         Spacer()
-                        Text("6 collections")
+                        Text("\(MediaCategory.allCases.count) collections")
                             .font(.system(size: 13, weight: .regular))
                             .foregroundColor(.mutedDarkGray)
                     }
@@ -111,11 +111,11 @@ struct ContentView: View {
             }
             
             HStack(alignment: .firstTextBaseline, spacing: 4) {
-                Text(manager.totalLibrarySize > 0 ? GalleryManager.formatSize(manager.totalLibrarySize).replacingOccurrences(of: " GB", with: "") : "--")
+                Text(manager.formattedLibrarySizeValue)
                     .font(.system(size: 40, weight: .bold))
                     .foregroundColor(.softWhite)
                 
-                Text("GB")
+                Text("\(manager.formattedLibrarySizeUnit) of \(manager.formattedDeviceSizeValue) \(manager.formattedDeviceSizeUnit)")
                     .font(.system(size: 16, weight: .semibold))
                     .foregroundColor(.lightGray)
                 
@@ -133,9 +133,12 @@ struct ContentView: View {
                         .fill(Color.charcoalBorder)
                         .frame(height: 4)
                     
+                    let fraction = manager.totalDeviceStorage > 0 ? Double(manager.totalLibrarySize) / Double(manager.totalDeviceStorage) : 0
+                    let boundedFraction = min(max(fraction, 0), 1.0)
+                    
                     Capsule()
                         .fill(Color.primaryGradient)
-                        .frame(width: geo.size.width * 0.65, height: 4) // Example progress
+                        .frame(width: geo.size.width * boundedFraction, height: 4)
                 }
             }
             .frame(height: 4)
