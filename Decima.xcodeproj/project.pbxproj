@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		000000000000000000000120 /* Decima.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Decima.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		000000000000000000000120 /* Decima.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Decima.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		000000000000000000000010 /* Decima */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "Decima";
+			path = Decima;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -59,7 +59,7 @@
 			fileSystemSynchronizedGroups = (
 				000000000000000000000010 /* Decima */,
 			);
-			name = "Decima";
+			name = Decima;
 			productName = Decima;
 			productReference = 000000000000000000000120 /* Decima.app */;
 			productType = "com.apple.product-type.application";

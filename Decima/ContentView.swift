@@ -180,23 +180,11 @@ struct ContentView: View {
         let isReady = manager.totalLibrarySize > 0
 
         return VStack(alignment: .leading, spacing: 10) {
-            GeometryReader { geo in
-                HStack(spacing: 2) {
-                    ForEach(parts, id: \.name) { part in
-                        if part.bytes > 0 {
-                            Capsule()
-                                .fill(Color.white.opacity(part.opacity))
-                                .frame(width: isReady ? max(3, geo.size.width * CGFloat(part.bytes) / CGFloat(total) - 2) : 0)
-                        }
-                    }
-                    Spacer(minLength: 0)
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .background(Capsule().fill(Color.white.opacity(0.2)))
-                .animation(.smooth(duration: 1.0), value: isReady)
-                .animation(.smooth, value: total)
-            }
-            .frame(height: 6)
+            CompositionBar(
+                shares: parts.map { Double($0.bytes) / Double(total) },
+                opacities: parts.map(\.opacity),
+                isReady: isReady
+            )
 
             HStack(spacing: 14) {
                 ForEach(parts, id: \.name) { part in
