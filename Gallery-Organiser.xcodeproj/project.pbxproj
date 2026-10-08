@@ -8,7 +8,6 @@
 
 /* Begin PBXFileReference section */
 		000000000000000000000120 /* Gallery-Organiser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gallery-Organiser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		691A0A3B307699FD005D5879 /* Gallery-Organiser.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Gallery-Organiser.xcodeproj"; path = "Gallery-Organiser/Gallery-Organiser.xcodeproj"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -40,13 +39,6 @@
 			isa = PBXGroup;
 			children = (
 				000000000000000000000120 /* Gallery-Organiser.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		691A0A3C307699FD005D5879 /* Products */ = {
-			isa = PBXGroup;
-			children = (
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,12 +91,6 @@
 			preferredProjectObjectVersion = 90;
 			productRefGroup = 000000000000000000000020 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 691A0A3C307699FD005D5879 /* Products */;
-					ProjectRef = 691A0A3B307699FD005D5879 /* Gallery-Organiser.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				000000000000000100000000 /* Gallery-Organiser */,
@@ -264,6 +250,8 @@
 		000000000000000111000000 /* Debug configuration for PBXNativeTarget "Gallery-Organiser" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LJP3GA97U2;
@@ -271,7 +259,8 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "\"Gallery Cleaner needs access to your photos to identify duplicates and large videos.\"";
+				INFOPLIST_KEY_CFBundleDisplayName = Decima;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Decima needs access to your photos to find duplicates, large videos and screenshots. Everything stays on your device.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -285,7 +274,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.gallerycleaner.appc0c62339;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gallerycleaner.appf57c4e9d;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SDKROOT = auto;
@@ -303,6 +292,8 @@
 		000000000000000112000000 /* Release configuration for PBXNativeTarget "Gallery-Organiser" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LJP3GA97U2;
@@ -310,7 +301,8 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "\"Gallery Cleaner needs access to your photos to identify duplicates and large videos.\"";
+				INFOPLIST_KEY_CFBundleDisplayName = Decima;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Decima needs access to your photos to find duplicates, large videos and screenshots. Everything stays on your device.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -324,7 +316,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.gallerycleaner.appc0c62339;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gallerycleaner.appf57c4e9d;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SDKROOT = auto;
