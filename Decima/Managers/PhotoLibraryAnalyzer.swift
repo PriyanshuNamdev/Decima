@@ -77,7 +77,7 @@ actor PhotoLibraryAnalyzer {
     }
     
     // MARK: - Exact Duplicates
-    func findExactDuplicates(mediaType: PHAssetMediaType) -> [AssetGroup] {
+    func findExactDuplicates(mediaType: PHAssetMediaType) async -> [AssetGroup] {
         let options = PHFetchOptions()
         options.includeHiddenAssets = false
         let result = PHAsset.fetchAssets(with: mediaType, options: options)
@@ -115,8 +115,8 @@ actor PhotoLibraryAnalyzer {
                             hashValue = hash.compactMap { String(format: "%02x", $0) }.joined()
                         }
                     }
-                } else {
-                    hashValue = "\(asset.duration)"
+                } else if let videoHash = await contentHash(ofVideo: asset) {
+                    hashValue = videoHash
                 }
                 hashDict[hashValue, default: []].append(asset)
             }
@@ -128,6 +128,27 @@ actor PhotoLibraryAnalyzer {
         }
         
         return duplicateGroups
+    }
+    
+    /// SHA-256 of the video's file, streamed in chunks so large videos never sit fully in memory.
+    /// Returns nil when the file can't be read locally (e.g. iCloud-only), so the asset is never
+    /// grouped as a duplicate on weak evidence.
+    private func contentHash(ofVideo asset: PHAsset) async -> String? {
+        let resources = PHAssetResource.assetResources(for: asset)
+        guard let resource = resources.first(where: { $0.type == .fullSizeVideo })
+                ?? resources.first(where: { $0.type == .video }) else { return nil }
+        
+        let options = PHAssetResourceRequestOptions()
+        options.isNetworkAccessAllowed = false
+        let hasher = StreamingHasher()
+        
+        return await withCheckedContinuation { continuation in
+            PHAssetResourceManager.default().requestData(for: resource, options: options, dataReceivedHandler: { chunk in
+                hasher.update(chunk)
+            }, completionHandler: { error in
+                continuation.resume(returning: error == nil ? hasher.finalize() : nil)
+            })
+        }
     }
     
     // MARK: - Similar Photos
@@ -229,5 +250,18 @@ actor PhotoLibraryAnalyzer {
             return (primary.value(forKey: "fileSize") as? Int64) ?? 0
         }
         return 0
+    }
+}
+
+/// PhotoKit delivers resource chunks serially, so a plain box around SHA256 is safe to share with its callbacks.
+private final class StreamingHasher: @unchecked Sendable {
+    private var hasher = SHA256()
+    
+    func update(_ data: Data) {
+        hasher.update(data: data)
+    }
+    
+    func finalize() -> String {
+        hasher.finalize().map { String(format: "%02x", $0) }.joined()
     }
 }

@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		000000000000000000000120 /* Gallery-Organiser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gallery-Organiser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		000000000000000000000120 /* Decima.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Decima.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		000000000000000000000010 /* Gallery-Organiser */ = {
+		000000000000000000000010 /* Decima */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "Gallery-Organiser";
+			path = "Decima";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -30,7 +30,7 @@
 		000000000000000000000001 = {
 			isa = PBXGroup;
 			children = (
-				000000000000000000000010 /* Gallery-Organiser */,
+				000000000000000000000010 /* Decima */,
 				000000000000000000000020 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -38,7 +38,7 @@
 		000000000000000000000020 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				000000000000000000000120 /* Gallery-Organiser.app */,
+				000000000000000000000120 /* Decima.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -46,9 +46,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		000000000000000100000000 /* Gallery-Organiser */ = {
+		000000000000000100000000 /* Decima */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 000000000000000110000000 /* Build configuration list for PBXNativeTarget "Gallery-Organiser" */;
+			buildConfigurationList = 000000000000000110000000 /* Build configuration list for PBXNativeTarget "Decima" */;
 			buildPhases = (
 				000000000000000120000000 /* Sources */,
 				000000000000000130000000 /* Frameworks */,
@@ -57,11 +57,11 @@
 			buildRules = (
 			);
 			fileSystemSynchronizedGroups = (
-				000000000000000000000010 /* Gallery-Organiser */,
+				000000000000000000000010 /* Decima */,
 			);
-			name = "Gallery-Organiser";
-			productName = MyApp;
-			productReference = 000000000000000000000120 /* Gallery-Organiser.app */;
+			name = "Decima";
+			productName = Decima;
+			productReference = 000000000000000000000120 /* Decima.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -79,7 +79,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 000000000000000010000000 /* Build configuration list for PBXProject "Gallery-Organiser" */;
+			buildConfigurationList = 000000000000000010000000 /* Build configuration list for PBXProject "Decima" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -93,7 +93,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				000000000000000100000000 /* Gallery-Organiser */,
+				000000000000000100000000 /* Decima */,
 			);
 		};
 /* End PBXProject section */
@@ -115,7 +115,7 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		000000000000000011000000 /* Debug configuration for PBXProject "Gallery-Organiser" */ = {
+		000000000000000011000000 /* Debug configuration for PBXProject "Decima" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -185,7 +185,7 @@
 			};
 			name = Debug;
 		};
-		000000000000000012000000 /* Release configuration for PBXProject "Gallery-Organiser" */ = {
+		000000000000000012000000 /* Release configuration for PBXProject "Decima" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -247,7 +247,7 @@
 			};
 			name = Release;
 		};
-		000000000000000111000000 /* Debug configuration for PBXNativeTarget "Gallery-Organiser" */ = {
+		000000000000000111000000 /* Debug configuration for PBXNativeTarget "Decima" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -289,7 +289,7 @@
 			};
 			name = Debug;
 		};
-		000000000000000112000000 /* Release configuration for PBXNativeTarget "Gallery-Organiser" */ = {
+		000000000000000112000000 /* Release configuration for PBXNativeTarget "Decima" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -334,19 +334,19 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		000000000000000010000000 /* Build configuration list for PBXProject "Gallery-Organiser" */ = {
+		000000000000000010000000 /* Build configuration list for PBXProject "Decima" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				000000000000000011000000 /* Debug configuration for PBXProject "Gallery-Organiser" */,
-				000000000000000012000000 /* Release configuration for PBXProject "Gallery-Organiser" */,
+				000000000000000011000000 /* Debug configuration for PBXProject "Decima" */,
+				000000000000000012000000 /* Release configuration for PBXProject "Decima" */,
 			);
 			defaultConfigurationName = Release;
 		};
-		000000000000000110000000 /* Build configuration list for PBXNativeTarget "Gallery-Organiser" */ = {
+		000000000000000110000000 /* Build configuration list for PBXNativeTarget "Decima" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				000000000000000111000000 /* Debug configuration for PBXNativeTarget "Gallery-Organiser" */,
-				000000000000000112000000 /* Release configuration for PBXNativeTarget "Gallery-Organiser" */,
+				000000000000000111000000 /* Debug configuration for PBXNativeTarget "Decima" */,
+				000000000000000112000000 /* Release configuration for PBXNativeTarget "Decima" */,
 			);
 			defaultConfigurationName = Release;
 		};
