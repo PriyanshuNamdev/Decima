@@ -11,6 +11,21 @@ struct AssetGroup: Identifiable {
 
 actor PhotoLibraryAnalyzer {
     
+    // MARK: - Photos
+    func fetchPhotos() -> [GalleryAsset] {
+        let options = PHFetchOptions()
+        options.includeHiddenAssets = false
+        options.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+        
+        let result = PHAsset.fetchAssets(with: .image, options: options)
+        var assets: [GalleryAsset] = []
+        for i in 0..<result.count {
+            let asset = result.object(at: i)
+            assets.append(GalleryAsset(asset: asset, fileSize: getFileSize(for: asset)))
+        }
+        return assets
+    }
+    
     // MARK: - Screenshots
     func fetchScreenshots() -> [GalleryAsset] {
         let options = PHFetchOptions()
@@ -52,7 +67,7 @@ actor PhotoLibraryAnalyzer {
         for i in 0..<result.count {
             let asset = result.object(at: i)
             let size = getFileSize(for: asset)
-            if size > 0 {
+            if size >= MediaCategory.largeVideoThreshold {
                 assetsWithSizes.append(GalleryAsset(asset: asset, fileSize: size))
             }
         }
