@@ -10,6 +10,9 @@ enum MediaCategory: String, CaseIterable, Identifiable {
     
     var id: String { rawValue }
     
+    /// Videos at or above this size count as "Large". Decimal MB, to match how sizes are displayed.
+    static let largeVideoThreshold: Int64 = 100_000_000
+    
     var title: String { rawValue }
     
     var subtitlePlaceholder: String {
@@ -19,7 +22,7 @@ enum MediaCategory: String, CaseIterable, Identifiable {
         case .duplicatePhotos: return "Exact copies"
         case .similarPhotos: return "Look-alike shots"
         case .duplicateVideos: return "Exact copies"
-        case .largeVideos: return "Biggest files first"
+        case .largeVideos: return "Over 100 MB, biggest first"
         }
     }
     
@@ -31,6 +34,17 @@ enum MediaCategory: String, CaseIterable, Identifiable {
         case .similarPhotos: return "photo.on.rectangle"
         case .duplicateVideos: return "doc.on.doc"
         case .largeVideos: return "internaldrive"
+        }
+    }
+    
+    var iconColor: Color {
+        switch self {
+        case .screenshots: return .cyan
+        case .videos: return .indigo
+        case .duplicatePhotos: return .coralRed
+        case .similarPhotos: return .yellow
+        case .duplicateVideos: return .pink
+        case .largeVideos: return .orange
         }
     }
 }
